@@ -5,23 +5,548 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tenin Group - Penyedia Layanan Profesional & Terpercaya">
     <meta name="keywords" content="tenin group, layanan profesional, konsultasi, aplikasi web">
-    <title>Tenin Group - Penyedia Layanan Profesional & Terpercaya</title>
+    <title>Tenin Group — Penyedia Layanan Profesional & Terpercaya</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        accent: '#f97316',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Sora:wght@400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-        * {
-            font-family: 'Plus Jakarta Sans', 'Sora', system-ui, -apple-system, sans-serif;
+        *, html { 
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            box-sizing: border-box;
         }
 
-        /* Dark Smooth Background */
-        html, body {
-            background: linear-gradient(135deg, #0f172a 0%, #1a1a2e 25%, #16213e 50%, #0f3460 75%, #0f172a 100%);
-            background-attachment: fixed;
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: #080808;
+            color: #e5e5e5;
             overflow-x: hidden;
         }
+
+        /* Noise texture overlay */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.5;
+        }
+
+        /* Grid dot bg */
+        .dot-grid {
+            background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+            background-size: 28px 28px;
+        }
+
+        /* Glow blob in hero */
+        .hero-glow {
+            position: absolute;
+            width: 700px;
+            height: 400px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(ellipse at center, rgba(249,115,22,0.12) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Animated fade up */
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(24px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        .fade-up { opacity: 0; animation: fadeUp 0.7s ease forwards; }
+        .fade-in { opacity: 0; animation: fadeIn 0.6s ease forwards; }
+
+        .d1 { animation-delay: 0.05s; }
+        .d2 { animation-delay: 0.15s; }
+        .d3 { animation-delay: 0.25s; }
+        .d4 { animation-delay: 0.35s; }
+        .d5 { animation-delay: 0.45s; }
+        .d6 { animation-delay: 0.55s; }
+
+        /* Reveal on scroll */
+        .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+
+        /* Accent orange */
+        .text-accent { color: #f97316; }
+        .border-accent { border-color: #f97316; }
+        .bg-accent { background-color: #f97316; }
+
+        /* Card border */
+        .card {
+            border: 1px solid rgba(255,255,255,0.07);
+            background: rgba(255,255,255,0.03);
+            transition: border-color 0.25s, background 0.25s, transform 0.25s;
+        }
+        .card:hover {
+            border-color: rgba(249,115,22,0.3);
+            background: rgba(249,115,22,0.04);
+            transform: translateY(-4px);
+        }
+
+        /* Shimmer on button */
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+            background: #f97316;
+            color: #000;
+            font-weight: 700;
+        }
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.25) 50%, transparent 100%);
+            transform: translateX(-100%);
+            transition: transform 0.5s ease;
+        }
+        .btn-primary:hover::after { transform: translateX(100%); }
+        .btn-primary:hover { background: #ea6c0a; }
+
+        .btn-outline {
+            border: 1px solid rgba(255,255,255,0.15);
+            color: #e5e5e5;
+            transition: border-color 0.25s, background 0.25s;
+        }
+        .btn-outline:hover {
+            border-color: rgba(255,255,255,0.35);
+            background: rgba(255,255,255,0.05);
+        }
+
+        /* Gradient heading */
+        .gradient-heading {
+            background: linear-gradient(135deg, #ffffff 40%, #a3a3a3 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Divider line */
+        .line-divider {
+            height: 1px;
+            background: rgba(255,255,255,0.08);
+        }
+
+        /* Badge */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid rgba(249,115,22,0.35);
+            background: rgba(249,115,22,0.08);
+            color: #f97316;
+            border-radius: 9999px;
+            padding: 4px 14px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #111; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #f97316; }
+
+        /* Nav */
+        nav {
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+            backdrop-filter: blur(12px) saturate(180%);
+            background: rgba(8,8,8,0.85);
+        }
+
+        /* Section label */
+        .section-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #525252;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50">
+        <div class="max-w-6xl mx-auto px-5 sm:px-8 flex justify-between items-center h-16">
+            <div class="flex items-center gap-3">
+                <span class="text-accent font-black text-2xl tracking-tight">TENIN</span>
+                <span class="text-white/20 text-lg font-thin">|</span>
+                <span class="text-white/60 text-sm font-medium tracking-wide">GROUP</span>
+            </div>
+
+            <div class="hidden md:flex items-center gap-8 text-sm text-white/60">
+                <a href="#tentang" class="hover:text-white transition">Tentang</a>
+                <a href="#layanan" class="hover:text-white transition">Layanan</a>
+                <a href="#klien" class="hover:text-white transition">Klien</a>
+                <a href="#kontak" class="hover:text-white transition">Kontak</a>
+                <a href="#kontak" class="btn-primary px-4 py-1.5 rounded-md text-sm">Mulai Sekarang →</a>
+            </div>
+
+            <button onclick="toggleMobileMenu()" class="md:hidden text-white/60 hover:text-white transition">
+                <svg id="menuIconOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                <svg id="menuIconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden px-5 pb-5 pt-2 space-y-3 text-sm text-white/60 border-t border-white/5">
+            <a href="#tentang" class="block hover:text-white transition py-1">Tentang</a>
+            <a href="#layanan" class="block hover:text-white transition py-1">Layanan</a>
+            <a href="#klien" class="block hover:text-white transition py-1">Klien</a>
+            <a href="#kontak" class="block hover:text-white transition py-1">Kontak</a>
+            <a href="#kontak" class="btn-primary inline-block px-4 py-2 rounded-md mt-2">Mulai Sekarang →</a>
+        </div>
+    </nav>
+
+    <!-- ════════════ HERO ════════════ -->
+    <section class="relative min-h-screen flex flex-col items-center justify-center text-center px-5 pt-16 overflow-hidden dot-grid">
+        <div class="hero-glow"></div>
+
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <span class="badge fade-up d1">Penyedia Layanan Resmi · Indonesia</span>
+
+            <h1 class="mt-8 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none gradient-heading fade-up d2">
+                Layanan<br>
+                <span class="text-accent">Profesional</span><br>
+                Terpercaya.
+            </h1>
+
+            <p class="mt-8 text-lg sm:text-xl text-white/50 max-w-xl mx-auto leading-relaxed fade-up d3">
+                Tenin Group adalah mitra strategis untuk individu, UMKM, dan perusahaan — memberikan solusi efisien dan berkualitas tinggi.
+            </p>
+
+            <div class="mt-10 flex flex-wrap justify-center gap-4 fade-up d4">
+                <a href="#layanan" class="btn-primary px-7 py-3 rounded-lg text-base">
+                    Lihat Layanan →
+                </a>
+                <a href="#tentang" class="btn-outline px-7 py-3 rounded-lg text-base">
+                    Tentang Kami
+                </a>
+            </div>
+        </div>
+
+        <!-- scroll arrow -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/20 fade-in d6 animate-bounce">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+        </div>
+    </section>
+
+    <!-- ════════════ TENTANG ════════════ -->
+    <section id="tentang" class="py-28 px-5 sm:px-8">
+        <div class="max-w-6xl mx-auto">
+            <p class="section-label reveal">Tentang Kami</p>
+            <div class="mt-4 grid md:grid-cols-2 gap-12 items-start">
+                <div class="reveal">
+                    <h2 class="text-3xl sm:text-4xl font-bold gradient-heading leading-snug">
+                        Mitra terpercaya untuk<br>bisnis yang berkembang.
+                    </h2>
+                </div>
+                <div class="reveal">
+                    <p class="text-white/55 leading-relaxed text-base sm:text-lg">
+                        Tenin Group hadir sebagai mitra strategis yang membantu klien dalam berbagai kebutuhan layanan. Kami percaya bahwa pelayanan yang baik bukan hanya soal hasil, tetapi juga soal proses dan komunikasi yang transparan.
+                    </p>
+                    <div class="mt-8 grid grid-cols-2 gap-4">
+                        <div class="card rounded-xl p-5 reveal">
+                            <div class="text-accent text-xl mb-2">✓</div>
+                            <p class="font-semibold text-white text-sm">Kualitas Pekerjaan</p>
+                            <p class="text-white/45 text-xs mt-1">Standar tinggi di setiap layanan</p>
+                        </div>
+                        <div class="card rounded-xl p-5 reveal">
+                            <div class="text-accent text-xl mb-2">✓</div>
+                            <p class="font-semibold text-white text-sm">Ketepatan Waktu</p>
+                            <p class="text-white/45 text-xs mt-1">Pengiriman tepat jadwal</p>
+                        </div>
+                        <div class="card rounded-xl p-5 reveal">
+                            <div class="text-accent text-xl mb-2">✓</div>
+                            <p class="font-semibold text-white text-sm">Profesionalisme Tim</p>
+                            <p class="text-white/45 text-xs mt-1">Tim berpengalaman & terlatih</p>
+                        </div>
+                        <div class="card rounded-xl p-5 reveal">
+                            <div class="text-accent text-xl mb-2">✓</div>
+                            <p class="font-semibold text-white text-sm">Kepuasan Klien</p>
+                            <p class="text-white/45 text-xs mt-1">Prioritas utama setiap saat</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visi & Misi -->
+            <div class="line-divider mt-20 mb-16"></div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="card rounded-2xl p-8 reveal">
+                    <p class="section-label mb-3">Visi</p>
+                    <p class="text-white font-semibold text-lg leading-relaxed">
+                        Menjadi perusahaan penyedia layanan terpercaya dan profesional yang mampu bersaing secara nasional.
+                    </p>
+                </div>
+                <div class="card rounded-2xl p-8 reveal">
+                    <p class="section-label mb-4">Misi</p>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-3 text-white/60 text-sm"><span class="text-accent mt-0.5">—</span> Memberikan layanan berkualitas tinggi</li>
+                        <li class="flex items-start gap-3 text-white/60 text-sm"><span class="text-accent mt-0.5">—</span> Menjaga integritas dan profesionalisme</li>
+                        <li class="flex items-start gap-3 text-white/60 text-sm"><span class="text-accent mt-0.5">—</span> Mengutamakan kepuasan pelanggan</li>
+                        <li class="flex items-start gap-3 text-white/60 text-sm"><span class="text-accent mt-0.5">—</span> Mengembangkan inovasi berkelanjutan</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════ LAYANAN ════════════ -->
+    <section id="layanan" class="py-28 px-5 sm:px-8 border-t border-white/[0.06]">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <p class="section-label mb-3">Layanan Kami</p>
+                <h2 class="text-3xl sm:text-4xl font-bold gradient-heading">Solusi komprehensif untuk kebutuhan Anda.</h2>
+                <p class="mt-4 text-white/45 max-w-md mx-auto text-sm">Setiap layanan dapat disesuaikan dengan kebutuhan unik klien.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="card rounded-2xl p-7 reveal group cursor-default">
+                    <div class="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center mb-5">
+                        <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                    </div>
+                    <h3 class="font-semibold text-white text-base mb-2">Konsultasi & Manajemen Proyek</h3>
+                    <p class="text-white/45 text-sm leading-relaxed">Solusi konsultasi strategis dan manajemen proyek profesional untuk kesuksesan bisnis.</p>
+                </div>
+
+                <div class="card rounded-2xl p-7 reveal group cursor-default">
+                    <div class="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center mb-5">
+                        <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+                    </div>
+                    <h3 class="font-semibold text-white text-base mb-2">Pengembangan Sistem & Aplikasi</h3>
+                    <p class="text-white/45 text-sm leading-relaxed">Teknologi terkini untuk sistem dan aplikasi yang efisien, scalable, dan andal.</p>
+                </div>
+
+                <div class="card rounded-2xl p-7 reveal group cursor-default">
+                    <div class="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center mb-5">
+                        <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/></svg>
+                    </div>
+                    <h3 class="font-semibold text-white text-base mb-2">Desain & Branding</h3>
+                    <p class="text-white/45 text-sm leading-relaxed">Identitas visual yang kuat dan konsisten untuk membangun kepercayaan brand Anda.</p>
+                </div>
+
+                <div class="card rounded-2xl p-7 reveal group cursor-default">
+                    <div class="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center mb-5">
+                        <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
+                    <h3 class="font-semibold text-white text-base mb-2">Administrasi & Dokumentasi</h3>
+                    <p class="text-white/45 text-sm leading-relaxed">Layanan administrasi komprehensif dan dokumentasi profesional yang terorganisir.</p>
+                </div>
+
+                <div class="card rounded-2xl p-7 reveal group cursor-default">
+                    <div class="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center mb-5">
+                        <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg>
+                    </div>
+                    <h3 class="font-semibold text-white text-base mb-2">Layanan Teknis & Operasional</h3>
+                    <p class="text-white/45 text-sm leading-relaxed">Dukungan teknis dan operasional penuh agar bisnis Anda berjalan tanpa hambatan.</p>
+                </div>
+
+                <div class="card rounded-2xl p-7 reveal group cursor-default" style="border-style: dashed;">
+                    <div class="w-10 h-10 rounded-lg bg-white/5 border border-white/10 flex items-center justify-center mb-5">
+                        <svg class="w-5 h-5 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                    </div>
+                    <h3 class="font-semibold text-white/40 text-base mb-2">Layanan Khusus</h3>
+                    <p class="text-white/25 text-sm leading-relaxed">Layanan disesuaikan sepenuhnya dengan kebutuhan spesifik klien.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════ KLIEN ════════════ -->
+    <section id="klien" class="py-28 px-5 sm:px-8 border-t border-white/[0.06]">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <p class="section-label mb-3">Target Klien</p>
+                <h2 class="text-3xl sm:text-4xl font-bold gradient-heading">Siapa yang kami layani.</h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="card rounded-2xl p-8 text-center reveal">
+                    <div class="text-4xl mb-4">🏢</div>
+                    <p class="font-semibold text-white text-sm">Perusahaan Swasta</p>
+                    <p class="text-white/40 text-xs mt-1">Skala menengah hingga besar</p>
+                </div>
+                <div class="card rounded-2xl p-8 text-center reveal">
+                    <div class="text-4xl mb-4">🏛️</div>
+                    <p class="font-semibold text-white text-sm">Instansi Pemerintah</p>
+                    <p class="text-white/40 text-xs mt-1">Pusat & daerah</p>
+                </div>
+                <div class="card rounded-2xl p-8 text-center reveal">
+                    <div class="text-4xl mb-4">🛍️</div>
+                    <p class="font-semibold text-white text-sm">UMKM</p>
+                    <p class="text-white/40 text-xs mt-1">Usaha kecil & menengah</p>
+                </div>
+                <div class="card rounded-2xl p-8 text-center reveal">
+                    <div class="text-4xl mb-4">👤</div>
+                    <p class="font-semibold text-white text-sm">Individu / Profesional</p>
+                    <p class="text-white/40 text-xs mt-1">Freelancer & pekerja mandiri</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════ MENGAPA ════════════ -->
+    <section class="py-28 px-5 sm:px-8 border-t border-white/[0.06]">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <p class="section-label mb-3">Keunggulan</p>
+                <h2 class="text-3xl sm:text-4xl font-bold gradient-heading">Mengapa memilih Tenin Group?</h2>
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-4">
+                <div class="card rounded-2xl p-7 flex gap-5 reveal">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center">
+                        <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-white text-sm mb-1">Berpengalaman & Profesional</h3>
+                        <p class="text-white/45 text-sm leading-relaxed">Tim dengan pengalaman bertahun-tahun dan standar profesionalisme tertinggi di industri.</p>
+                    </div>
+                </div>
+
+                <div class="card rounded-2xl p-7 flex gap-5 reveal">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center">
+                        <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-white text-sm mb-1">Respons Cepat</h3>
+                        <p class="text-white/45 text-sm leading-relaxed">Respons cepat dan solusi efektif untuk setiap pertanyaan dan kebutuhan klien.</p>
+                    </div>
+                </div>
+
+                <div class="card rounded-2xl p-7 flex gap-5 reveal">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center">
+                        <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-white text-sm mb-1">Harga Kompetitif</h3>
+                        <p class="text-white/45 text-sm leading-relaxed">Paket harga kompetitif tanpa mengorbankan kualitas layanan yang Anda terima.</p>
+                    </div>
+                </div>
+
+                <div class="card rounded-2xl p-7 flex gap-5 reveal">
+                    <div class="flex-shrink-0 w-10 h-10 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center">
+                        <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                    </div>
+                    <div>
+                        <h3 class="font-semibold text-white text-sm mb-1">Support & Maintenance Berkelanjutan</h3>
+                        <p class="text-white/45 text-sm leading-relaxed">Dukungan penuh dan pemeliharaan berkelanjutan agar sistem Anda selalu optimal.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════ CTA KONTAK ════════════ -->
+    <section id="kontak" class="py-28 px-5 sm:px-8 border-t border-white/[0.06]">
+        <div class="max-w-3xl mx-auto text-center reveal">
+            <p class="section-label mb-4">Mulai Kolaborasi</p>
+            <h2 class="text-4xl sm:text-5xl font-black gradient-heading leading-tight">
+                Siap bekerja<br>sama dengan kami?
+            </h2>
+            <p class="mt-6 text-white/50 text-base sm:text-lg max-w-lg mx-auto leading-relaxed">
+                Hubungi kami sekarang dan konsultasikan kebutuhan Anda. Tim kami siap memberikan solusi terbaik.
+            </p>
+            <div class="mt-10 flex flex-wrap justify-center gap-4">
+                <a href="mailto:info@teningroup.com" class="btn-primary px-8 py-3.5 rounded-lg text-base font-bold">
+                    📧 Kirim Email →
+                </a>
+                <a href="https://wa.me/62xxx" class="btn-outline px-8 py-3.5 rounded-lg text-base font-medium">
+                    💬 WhatsApp
+                </a>
+            </div>
+            <p class="mt-8 text-white/25 text-sm">📍 Indonesia &nbsp;·&nbsp; info@teningroup.com &nbsp;·&nbsp; +62 (xxx) xxx-xxxx</p>
+        </div>
+    </section>
+
+    <!-- ════════════ FOOTER ════════════ -->
+    <footer class="border-t border-white/[0.06] py-10 px-5 sm:px-8">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div class="flex items-center gap-3">
+                <span class="text-accent font-black text-xl">TENIN</span>
+                <span class="text-white/20 text-base font-thin">|</span>
+                <span class="text-white/40 text-sm">GROUP</span>
+            </div>
+
+            <div class="flex gap-6 text-sm text-white/35">
+                <a href="#tentang" class="hover:text-white transition">Tentang</a>
+                <a href="#layanan" class="hover:text-white transition">Layanan</a>
+                <a href="#klien" class="hover:text-white transition">Klien</a>
+                <a href="#kontak" class="hover:text-white transition">Kontak</a>
+            </div>
+
+            <p class="text-white/20 text-xs">© 2026 Tenin Group. Hak cipta dilindungi.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            const open = document.getElementById('menuIconOpen');
+            const close = document.getElementById('menuIconClose');
+            const isHidden = menu.classList.contains('hidden');
+            menu.classList.toggle('hidden');
+            open.classList.toggle('hidden', !isHidden);
+            close.classList.toggle('hidden', isHidden);
+        }
+
+        document.querySelectorAll('#mobileMenu a').forEach(a => {
+            a.addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.add('hidden');
+                document.getElementById('menuIconOpen').classList.remove('hidden');
+                document.getElementById('menuIconClose').classList.add('hidden');
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+            });
+        });
+
+        // Scroll reveal
+        const revealObserver = new IntersectionObserver(entries => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => entry.target.classList.add('visible'), i * 60);
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>
 
         @keyframes gradientShift {
             0%, 100% { background-position: 0% 50%; }
