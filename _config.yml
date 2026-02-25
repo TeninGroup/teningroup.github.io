@@ -1,0 +1,69 @@
+# ─────────────────────────────────────────────────────
+#  Tenin Group — Jekyll Configuration
+# ─────────────────────────────────────────────────────
+
+title:          "Tenin Group"
+tagline:        "Micro VC · Mendanai Founder Tahap Awal"
+description:    "Tenin Group adalah Micro VC & Angel Fund yang mendanai startup lokal di tahap paling awal — modal kecil, jaringan nyata, pendampingan langsung."
+url:            "https://teningroup.github.io"
+baseurl:        ""
+lang:           "id"
+
+author:
+  name:         "Tenin Group"
+  email:        "grouptenin@gmail.com"
+
+# ── SEO ──────────────────────────────────────────────
+logo:           "/assets/images/og-image.png"
+
+twitter:
+  username:     teningroup
+  card:         summary_large_image
+
+social:
+  name:         Tenin Group
+  links:
+    - https://github.com/TeninGroup
+
+# Open Graph defaults
+defaults:
+  - scope:
+      path: ""
+    values:
+      image:    "/assets/images/og-image.png"
+
+# ── Build ─────────────────────────────────────────────
+markdown:       kramdown
+highlighter:    rouge
+
+permalink:      pretty
+
+# ── Navigation (used in header.html & footer.html) ───
+nav:
+  - label: "Tentang"
+    url:   "#tentang"
+  - label: "Fokus"
+    url:   "#layanan"
+  - label: "Portfolio"
+    url:   "#klien"
+  - label: "Kontak"
+    url:   "#kontak"
+
+# ── Plugins ──────────────────────────────────────────
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# ── Sitemap ──────────────────────────────────────────
+sitemap:
+  exclude:
+    - "/404.html"
+
+# ── Exclude from build ───────────────────────────────
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - .gitignore
+  - vendor/
+  - "*.sh"

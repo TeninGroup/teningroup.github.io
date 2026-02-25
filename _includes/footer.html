@@ -1,0 +1,59 @@
+<!-- Footer -->
+<footer class="border-t border-white/[0.06] py-10 px-5 sm:px-8">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
+        <a href="{{ '/' | relative_url }}" class="flex items-center gap-3">
+            <span class="text-accent font-black text-xl">TENIN</span>
+            <span class="text-white/20 text-base font-thin">|</span>
+            <span class="text-white/40 text-sm">GROUP</span>
+        </a>
+
+        <div class="flex gap-6 text-sm text-white/35">
+            {% for item in site.nav %}
+            <a href="{{ item.url }}" class="hover:text-white transition">{{ item.label }}</a>
+            {% endfor %}
+        </div>
+
+        <p class="text-white/20 text-xs">© {{ 'now' | date: '%Y' }} {{ site.title }}. Hak cipta dilindungi.</p>
+    </div>
+</footer>
+
+<script>
+    // Mobile menu
+    function toggleMobileMenu() {
+        const menu = document.getElementById('mobileMenu');
+        const open = document.getElementById('menuIconOpen');
+        const close = document.getElementById('menuIconClose');
+        const isHidden = menu.classList.contains('hidden');
+        menu.classList.toggle('hidden');
+        open.classList.toggle('hidden', !isHidden);
+        close.classList.toggle('hidden', isHidden);
+    }
+
+    document.querySelectorAll('#mobileMenu a').forEach(a => {
+        a.addEventListener('click', () => {
+            document.getElementById('mobileMenu').classList.add('hidden');
+            document.getElementById('menuIconOpen').classList.remove('hidden');
+            document.getElementById('menuIconClose').classList.add('hidden');
+        });
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener('click', e => {
+            const target = document.querySelector(a.getAttribute('href'));
+            if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth' }); }
+        });
+    });
+
+    // Scroll reveal
+    const revealObserver = new IntersectionObserver(entries => {
+        entries.forEach((entry, i) => {
+            if (entry.isIntersecting) {
+                setTimeout(() => entry.target.classList.add('visible'), i * 60);
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+</script>

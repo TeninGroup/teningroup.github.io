@@ -1,0 +1,48 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{% seo %}
+
+{% if page.keywords %}
+<meta name="keywords" content="{{ page.keywords }}">
+{% else %}
+<meta name="keywords" content="tenin group, micro vc, angel fund, investasi startup, pre-seed, inkubasi, startup lokal">
+{% endif %}
+
+<!-- Canonical -->
+<link rel="canonical" href="{{ page.url | prepend: site.url }}">
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    accent: '#f97316',
+                    amber:  '#f59e0b',
+                }
+            }
+        }
+    }
+</script>
+
+<!-- Custom CSS -->
+<link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ site.title }}",
+  "url": "{{ site.url }}",
+  "description": "{{ site.description }}",
+  "logo": "{{ site.url }}/assets/images/og-image.png",
+  "email": "{{ site.author.email }}",
+  "sameAs": []
+}
+</script>
