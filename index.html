@@ -22,10 +22,11 @@
     </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap');
 
         *,
         html {
-            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            font-family: 'Karla', 'Inter', system-ui, -apple-system, sans-serif;
             box-sizing: border-box;
         }
 
@@ -49,7 +50,14 @@
             z-index: 0;
             opacity: 0.5;
         }
+        /* font */
+        .font-karla {
+            font-family: 'Karla', 'Inter', system-ui, -apple-system, sans-serif;
+        }
 
+        .font-inter {
+            font-family: 'Inter', 'Karla', system-ui, -apple-system, sans-serif;
+        }
         /* Grid dot bg */
         .dot-grid {
             background-image: radial-gradient(circle, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
@@ -735,6 +743,98 @@
                         <p class="text-white/45 text-sm leading-relaxed">Dukungan penuh dan pemeliharaan berkelanjutan
                             agar sistem Anda selalu optimal.</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════ TESTIMONIAL ════════════ -->
+    <section class="py-24 px-5 sm:px-8 border-t border-white/[0.06]">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <p class="section-label mb-3">Testimoni</p>
+                <h2 class="text-3xl sm:text-4xl font-bold gradient-heading">Apa kata klien kami.</h2>
+                <p class="mt-4 text-white/45 max-w-md mx-auto text-sm">Kepercayaan klien adalah bukti nyata komitmen kami terhadap kualitas.</p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+                <!-- Testimoni 1 -->
+                <div class="card rounded-2xl p-7 flex flex-col gap-5 reveal">
+                    <div class="flex gap-1 text-accent text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed flex-1">
+                        "Tenin Group membantu kami membangun sistem informasi internal yang sangat efisien. Tim mereka responsif, profesional, dan pengerjaan tepat waktu. Sangat direkomendasikan!"
+                    </p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/[0.06]">
+                        <div class="w-9 h-9 rounded-full bg-accent/20 border border-accent/30 flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-user text-accent text-sm"></i>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold text-sm">Budi Santoso</p>
+                            <p class="text-white/35 text-xs">Direktur Operasional · PT Maju Bersama</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimoni 2 -->
+                <div class="card rounded-2xl p-7 flex flex-col gap-5 reveal">
+                    <div class="flex gap-1 text-accent text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed flex-1">
+                        "Desain branding yang dibuat Tenin Group benar-benar meningkatkan kepercayaan pelanggan kami. Hasilnya melebihi ekspektasi dengan harga yang sangat kompetitif."
+                    </p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/[0.06]">
+                        <div class="w-9 h-9 rounded-full bg-accent/20 border border-accent/30 flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-user text-accent text-sm"></i>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold text-sm">Rina Kusuma</p>
+                            <p class="text-white/35 text-xs">Pemilik · Toko Batik Nusantara</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimoni 3 -->
+                <div class="card rounded-2xl p-7 flex flex-col gap-5 reveal">
+                    <div class="flex gap-1 text-accent text-sm">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed flex-1">
+                        "Layanan konsultasi dari Tenin Group membantu instansi kami menyusun dokumen pengadaan secara terstruktur. Proses komunikasi sangat transparan dan mudah dipahami."
+                    </p>
+                    <div class="flex items-center gap-3 pt-4 border-t border-white/[0.06]">
+                        <div class="w-9 h-9 rounded-full bg-accent/20 border border-accent/30 flex items-center justify-center flex-shrink-0">
+                            <i class="fa-solid fa-user text-accent text-sm"></i>
+                        </div>
+                        <div>
+                            <p class="text-white font-semibold text-sm">Ahmad Fauzi</p>
+                            <p class="text-white/35 text-xs">Kepala Seksi IT · Dinas</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Stats bar -->
+            <div class="mt-14 grid grid-cols-2 sm:grid-cols-4 gap-px bg-white/[0.06] rounded-2xl overflow-hidden reveal">
+                <div class="bg-[#080808] px-6 py-7 text-center">
+                    <p class="text-3xl font-black text-accent">50+</p>
+                    <p class="text-white/40 text-xs mt-1">Proyek Selesai</p>
+                </div>
+                <div class="bg-[#080808] px-6 py-7 text-center">
+                    <p class="text-3xl font-black text-accent">30+</p>
+                    <p class="text-white/40 text-xs mt-1">Klien Puas</p>
+                </div>
+                <div class="bg-[#080808] px-6 py-7 text-center">
+                    <p class="text-3xl font-black text-accent">4.9</p>
+                    <p class="text-white/40 text-xs mt-1">Rating Rata-rata</p>
+                </div>
+                <div class="bg-[#080808] px-6 py-7 text-center">
+                    <p class="text-3xl font-black text-accent">3+</p>
+                    <p class="text-white/40 text-xs mt-1">Tahun Pengalaman</p>
                 </div>
             </div>
         </div>
