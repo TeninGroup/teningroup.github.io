@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tenin Group - Venture Capital untuk Startup Teknologi & Bisnis Inovatif di Indonesia">
-    <meta name="keywords" content="tenin group, venture capital, investasi startup, pendanaan, modal ventura, inovasi, teknologi">
-    <title>Tenin Group — Venture Capital · Mendanai Inovasi Indonesia</title>
+    <meta name="description" content="Tenin Group - Micro VC & Angel Fund untuk Startup Lokal Tahap Awal">
+    <meta name="keywords" content="tenin group, micro vc, angel fund, investasi startup, pre-seed, inkubasi, jakarta">
+    <title>Tenin Group — Micro VC · Mendanai Founder Tahap Awal</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -98,6 +98,11 @@
             to {
                 opacity: 1;
             }
+        }
+
+        @keyframes marquee {
+            from { transform: translateX(0); }
+            to   { transform: translateX(-50%); }
         }
 
         .fade-up {
@@ -346,17 +351,17 @@
         <div class="hero-glow"></div>
 
         <div class="relative z-10 max-w-4xl mx-auto">
-            <span class="badge fade-up d1">Venture Capital · Indonesia</span>
+            <span class="badge fade-up d1">Micro VC · Startup Lokal</span>
 
             <h1
                 class="mt-8 text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none gradient-heading fade-up d2">
                 Mendanai<br>
-                <span class="text-accent">Inovasi</span><br>
-                Indonesia.
+                <span class="text-accent">Founder</span><br>
+                Tahap Awal.
             </h1>
 
             <p class="mt-8 text-lg sm:text-xl text-white/50 max-w-xl mx-auto leading-relaxed fade-up d3">
-                Tenin Group adalah venture capital yang berinvestasi pada startup teknologi dan bisnis inovatif — membawa modal, jaringan, dan keahlian untuk mendorong pertumbuhan luar biasa.
+                Tenin Group adalah micro VC yang berinvestasi pada founder dan startup lokal di tahap paling awal — membawa modal kecil, jaringan nyata, dan pendampingan langsung.
             </p>
 
             <div class="mt-10 flex flex-wrap justify-center gap-4 fade-up d4">
@@ -381,41 +386,86 @@
     <section id="tentang" class="py-24 px-5 sm:px-8">
         <div class="max-w-6xl mx-auto">
             <p class="section-label reveal">Tentang Kami</p>
-            <div class="mt-4 grid md:grid-cols-2 gap-12 items-start">
+            <div class="mt-4 grid md:grid-cols-2 gap-16 items-start">
                 <div class="reveal">
-                    <h2 class="text-3xl sm:text-4xl font-bold gradient-heading leading-snug">
-                        Partner strategis untuk<br>founders yang visioner.
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black gradient-heading leading-snug">
+                        Partner strategis untuk<br>
+                        <span class="text-accent">founders</span> yang visioner.
                     </h2>
-                    <div class="mt-12 reveal">
+                    <p class="mt-6 text-white/40 text-sm leading-relaxed max-w-sm">
+                        Lebih dari sekadar modal — kami hadir sebagai mitra yang terlibat langsung di setiap tahap perjalanan Anda.
+                    </p>
+                    <div class="mt-10 flex flex-col gap-4">
+                        <div class="flex items-center gap-4 reveal">
+                            <div class="w-8 h-px bg-accent/40"></div>
+                            <span class="text-white/30 text-xs uppercase tracking-widest font-semibold">Dipercaya oleh founder lokal sejak 2026</span>
+                        </div>
+                        <div class="mt-2 flex gap-6">
+                            <div class="reveal">
+                                <p class="text-3xl font-black text-white">4+</p>
+                                <p class="text-white/35 text-xs mt-1">Sektor Fokus</p>
+                            </div>
+                            <div class="w-px bg-white/[0.06]"></div>
+                            <div class="reveal">
+                                <p class="text-3xl font-black text-white">2–4<span class="text-accent text-lg">w</span></p>
+                                <p class="text-white/35 text-xs mt-1">Waktu Deal</p>
+                            </div>
+                            <div class="w-px bg-white/[0.06]"></div>
+                            <div class="reveal">
+                                <p class="text-3xl font-black text-white">100<span class="text-accent text-lg">%</span></p>
+                                <p class="text-white/35 text-xs mt-1">Aktif Post-Deal</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-10 reveal">
                         <img src="assets/images/home-05.svg" alt="Tenin Group - Ilustrasi Layanan"
-                            class="w-4/5 h-auto max-w-2xl py-10">
+                            class="w-4/5 h-auto max-w-sm opacity-80">
                     </div>
                 </div>
-                <div class="reveal">
-                    <p class="text-white/55 leading-relaxed text-base sm:text-lg">
-                        Tenin Group adalah venture capital yang berkomitmen mendanai dan mengakselerasi startup teknologi serta bisnis inovatif di Indonesia. Kami percaya bahwa modal terbaik bukan hanya uang, tetapi juga jaringan, mentor, dan kepercayaan jangka panjang.
+
+                <div class="reveal space-y-6">
+                    <p class="text-white/55 leading-relaxed text-base sm:text-lg border-l-2 border-accent/40 pl-5">
+                        Tenin Group adalah micro VC yang berkomitmen mendanai founder berbakat di tahap paling awal. Kami percaya bahwa founder lokal membutuhkan lebih dari sekadar uang — mereka butuh mitra yang mau terlibat langsung, jujur, dan hadir di saat yang paling krusial.
                     </p>
-                    <div class="mt-8 grid grid-cols-2 gap-4">
-                        <div class="card rounded-xl p-5 reveal">
-                            <div class="text-accent text-xl mb-2"><i class="fa-solid fa-seedling"></i></div>
-                            <p class="font-semibold text-white text-sm">Early-Stage Focus</p>
-                            <p class="text-white/45 text-xs mt-1">Investasi dari tahap pre-seed</p>
+
+                    <div class="grid grid-cols-2 gap-3 mt-8">
+                        <div class="card rounded-2xl p-5 reveal group cursor-default">
+                            <div class="w-9 h-9 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition">
+                                <i class="fa-solid fa-seedling text-accent text-sm"></i>
+                            </div>
+                            <p class="font-bold text-white text-sm">Early-Stage Focus</p>
+                            <p class="text-white/40 text-xs mt-1.5 leading-relaxed">Investasi dari tahap pre-seed hingga seed</p>
                         </div>
-                        <div class="card rounded-xl p-5 reveal">
-                            <div class="text-accent text-xl mb-2"><i class="fa-solid fa-network-wired"></i></div>
-                            <p class="font-semibold text-white text-sm">Jaringan Luas</p>
-                            <p class="text-white/45 text-xs mt-1">Akses ke ekosistem global</p>
+                        <div class="card rounded-2xl p-5 reveal group cursor-default">
+                            <div class="w-9 h-9 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition">
+                                <i class="fa-solid fa-network-wired text-accent text-sm"></i>
+                            </div>
+                            <p class="font-bold text-white text-sm">Jaringan Luas</p>
+                            <p class="text-white/40 text-xs mt-1.5 leading-relaxed">Akses ke ekosistem investor & industri</p>
                         </div>
-                        <div class="card rounded-xl p-5 reveal">
-                            <div class="text-accent text-xl mb-2"><i class="fa-solid fa-users"></i></div>
-                            <p class="font-semibold text-white text-sm">Mentor Berpengalaman</p>
-                            <p class="text-white/45 text-xs mt-1">Tim operator & investor senior</p>
+                        <div class="card rounded-2xl p-5 reveal group cursor-default">
+                            <div class="w-9 h-9 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition">
+                                <i class="fa-solid fa-users text-accent text-sm"></i>
+                            </div>
+                            <p class="font-bold text-white text-sm">Mentor Berpengalaman</p>
+                            <p class="text-white/40 text-xs mt-1.5 leading-relaxed">Tim operator & investor senior aktif</p>
                         </div>
-                        <div class="card rounded-xl p-5 reveal">
-                            <div class="text-accent text-xl mb-2"><i class="fa-solid fa-chart-line"></i></div>
-                            <p class="font-semibold text-white text-sm">Growth Driven</p>
-                            <p class="text-white/45 text-xs mt-1">Fokus pada skalabilitas bisnis</p>
+                        <div class="card rounded-2xl p-5 reveal group cursor-default">
+                            <div class="w-9 h-9 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition">
+                                <i class="fa-solid fa-chart-line text-accent text-sm"></i>
+                            </div>
+                            <p class="font-bold text-white text-sm">Growth Driven</p>
+                            <p class="text-white/40 text-xs mt-1.5 leading-relaxed">Fokus pada skalabilitas & traksi nyata</p>
                         </div>
+                    </div>
+
+                    <div class="reveal mt-4 rounded-2xl p-5 flex items-center gap-4" style="background: rgba(249,115,22,0.05); border: 1px solid rgba(249,115,22,0.15);">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center">
+                            <i class="fa-solid fa-quote-left text-accent text-sm"></i>
+                        </div>
+                        <p class="text-white/50 text-xs leading-relaxed italic">
+                            "Kami tidak hanya melihat angka — kami melihat siapa yang ada di balik startup itu dan seberapa besar tekad mereka."
+                        </p>
                     </div>
                 </div>
             </div>
@@ -433,9 +483,9 @@
                     <span class="absolute top-6 left-8 text-accent/10 font-black" style="font-size: 8rem; line-height:1; pointer-events:none; user-select:none;">"</span>
                     <div class="relative z-10 px-10 sm:px-16 py-12 sm:py-14 text-center">
                         <p class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-snug max-w-3xl mx-auto">
-                            Menjadi venture capital terkemuka di Asia Tenggara yang
-                            <span class="text-accent"> melahirkan startup kelas dunia</span>
-                            dari Indonesia.
+                            Menjadi micro VC terpercaya yang
+                            <span class="text-accent"> melahirkan founder & startup berdampak</span>
+                            dari ekosistem lokal.
                         </p>
                         <div class="mt-8 flex justify-center">
                             <span class="inline-flex items-center gap-2 text-accent/70 text-xs uppercase tracking-widest font-semibold">
@@ -529,7 +579,7 @@
                         <i class="fa-solid fa-graduation-cap text-accent"></i>
                     </div>
                     <h3 class="font-semibold text-white text-base mb-2">Edtech</h3>
-                    <p class="text-white/45 text-sm leading-relaxed">Platform pendidikan dan pengembangan kompetensi yang menjangkau jutaan pelajar di seluruh Indonesia.</p>
+                    <p class="text-white/45 text-sm leading-relaxed">Platform pendidikan dan pengembangan kompetensi yang menjawab kebutuhan belajar komunitas lokal secara terjangkau dan efektif.</p>
                 </div>
 
                 <div class="card rounded-2xl p-7 reveal group cursor-default">
@@ -558,8 +608,8 @@
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16 reveal">
                 <p class="section-label mb-3">Portfolio Kami</p>
-                <h2 class="text-3xl sm:text-4xl font-bold gradient-heading">Startup yang kami dukung.</h2>
-                <p class="mt-4 text-white/45 max-w-md mx-auto text-sm">Kami bermitra dengan founder terbaik di berbagai tahap pertumbuhan dan sektor.</p>
+                <h2 class="text-3xl sm:text-4xl font-bold gradient-heading">Bagaimana kami berinvestasi.</h2>
+                <p class="mt-4 text-white/45 max-w-md mx-auto text-sm">Fokus pada founder startup lokal tahap awal dengan tiket kecil namun pendampingan intensif.</p>
             </div>
 
             <div class="grid sm:grid-cols-2 gap-6">
@@ -567,112 +617,148 @@
                 <!-- Pre-Seed -->
                 <div class="card rounded-2xl p-8 reveal">
                     <div class="flex items-start gap-5">
-                        <div
-                            class="flex-shrink-0 w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
+                        <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
                             <i class="fa-solid fa-seedling text-accent text-2xl"></i>
                         </div>
                         <div class="flex-1">
                             <p class="text-white/35 text-xs uppercase tracking-widest mb-1">Tahap 01</p>
-                            <h3 class="font-bold text-white text-lg mb-2">Pre-Seed & Seed</h3>
-                            <p class="text-white/50 text-sm leading-relaxed">Investasi awal untuk founder dengan visi kuat dan MVP yang menunjukkan product-market fit awal di pasar yang besar.</p>
+                            <h3 class="font-bold text-white text-lg mb-2">Pre-Seed</h3>
+                            <p class="text-white/50 text-sm leading-relaxed">Untuk founder di tahap ide atau MVP awal yang butuh modal pertama dan mentor untuk memvalidasi bisnis mereka.</p>
                         </div>
                     </div>
                     <div class="mt-6 pt-5 border-t border-white/[0.06]">
                         <ul class="space-y-2.5">
-                            <li class="flex items-center gap-3 text-white/55 text-sm"><i
-                                    class="fa-solid fa-check text-accent text-xs w-4"></i> Tiket Rp 500 juta – Rp 5 miliar
-                            </li>
-                            <li class="flex items-center gap-3 text-white/55 text-sm"><i
-                                    class="fa-solid fa-check text-accent text-xs w-4"></i> Mentoring intensif & co-building
-                            </li>
-                            <li class="flex items-center gap-3 text-white/55 text-sm"><i
-                                    class="fa-solid fa-check text-accent text-xs w-4"></i> Akses jaringan investor Series A</li>
+                            <li class="flex items-center gap-3 text-white/55 text-sm"><i class="fa-solid fa-check text-accent text-xs w-4"></i> Tiket Rp 25 juta – Rp 150 juta</li>
+                            <li class="flex items-center gap-3 text-white/55 text-sm"><i class="fa-solid fa-check text-accent text-xs w-4"></i> Mentoring intensif & co-building</li>
+                            <li class="flex items-center gap-3 text-white/55 text-sm"><i class="fa-solid fa-check text-accent text-xs w-4"></i> Koneksi ke angel investor berikutnya</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Series A -->
+                <!-- Seed -->
                 <div class="card rounded-2xl p-8 reveal">
                     <div class="flex items-start gap-5">
-                        <div
-                            class="flex-shrink-0 w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
-                            <i class="fa-solid fa-rocket text-accent text-2xl"></i>
+                        <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
+                            <i class="fa-solid fa-chart-simple text-accent text-2xl"></i>
                         </div>
                         <div class="flex-1">
                             <p class="text-white/35 text-xs uppercase tracking-widest mb-1">Tahap 02</p>
-                            <h3 class="font-bold text-white text-lg mb-2">Series A</h3>
-                            <p class="text-white/50 text-sm leading-relaxed">Mendukung startup yang telah membuktikan traksi dan siap melakukan ekspansi pasar secara agresif.</p>
+                            <h3 class="font-bold text-white text-lg mb-2">Seed</h3>
+                            <p class="text-white/50 text-sm leading-relaxed">Untuk startup yang sudah punya MVP dan pengguna awal, siap meningkatkan traksi dan membuktikan model bisnis mereka.</p>
                         </div>
                     </div>
                     <div class="mt-6 pt-5 border-t border-white/[0.06]">
                         <ul class="space-y-2.5">
-                            <li class="flex items-center gap-3 text-white/55 text-sm"><i
-                                    class="fa-solid fa-check text-accent text-xs w-4"></i> Tiket Rp 5 miliar – Rp 50 miliar
-                            </li>
-                            <li class="flex items-center gap-3 text-white/55 text-sm"><i
-                                    class="fa-solid fa-check text-accent text-xs w-4"></i> Dukungan go-to-market & scaling
-                            </li>
-                            <li class="flex items-center gap-3 text-white/55 text-sm"><i
-                                    class="fa-solid fa-check text-accent text-xs w-4"></i> Rekrutmen talent & C-level network</li>
+                            <li class="flex items-center gap-3 text-white/55 text-sm"><i class="fa-solid fa-check text-accent text-xs w-4"></i> Tiket Rp 150 juta – Rp 500 juta</li>
+                            <li class="flex items-center gap-3 text-white/55 text-sm"><i class="fa-solid fa-check text-accent text-xs w-4"></i> Dukungan product-market fit & growth</li>
+                            <li class="flex items-center gap-3 text-white/55 text-sm"><i class="fa-solid fa-check text-accent text-xs w-4"></i> Akses jaringan untuk fundraising lanjutan</li>
                         </ul>
                     </div>
                 </div>
 
-                <!-- Strategic Investment -->
+                <!-- Inkubasi -->
                 <div class="card rounded-2xl p-8 reveal">
                     <div class="flex items-start gap-5">
-                        <div
-                            class="flex-shrink-0 w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
-                            <i class="fa-solid fa-handshake text-accent text-2xl"></i>
-                        </div>
-                        <div class="flex-1">
-                            <p class="text-white/35 text-xs uppercase tracking-widest mb-1">Tahap 03</p>
-                            <h3 class="font-bold text-white text-lg mb-2">Strategic Investment</h3>
-                            <p class="text-white/50 text-sm leading-relaxed">Investasi strategis pada perusahaan matang yang ingin bermitra, berinovasi, atau melakukan transformasi digital.</p>
-                        </div>
-                    </div>
-                    <div class="mt-6 pt-5 border-t border-white/[0.06]">
-                        <ul class="space-y-2.5">
-                            <li class="flex items-center gap-3 text-white/55 text-sm"><i
-                                    class="fa-solid fa-check text-accent text-xs w-4"></i> Tiket fleksibel sesuai kebutuhan</li>
-                            <li class="flex items-center gap-3 text-white/55 text-sm"><i
-                                    class="fa-solid fa-check text-accent text-xs w-4"></i> Joint venture & kemitraan strategis
-                            </li>
-                            <li class="flex items-center gap-3 text-white/55 text-sm"><i
-                                    class="fa-solid fa-check text-accent text-xs w-4"></i> Dukungan M&A & corporate development
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Incubation -->
-                <div class="card rounded-2xl p-8 reveal">
-                    <div class="flex items-start gap-5">
-                        <div
-                            class="flex-shrink-0 w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
+                        <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
                             <i class="fa-solid fa-flask text-accent text-2xl"></i>
                         </div>
                         <div class="flex-1">
-                            <p class="text-white/35 text-xs uppercase tracking-widest mb-1">Program 04</p>
-                            <h3 class="font-bold text-white text-lg mb-2">Inkubasi & Akselerasi</h3>
-                            <p class="text-white/50 text-sm leading-relaxed">Program terstruktur bagi founder tahap ideasi hingga MVP, lengkap dengan modal awal, ruang kerja, dan mentorship.</p>
+                            <p class="text-white/35 text-xs uppercase tracking-widest mb-1">Program 03</p>
+                            <h3 class="font-bold text-white text-lg mb-2">Inkubasi</h3>
+                            <p class="text-white/50 text-sm leading-relaxed">Program pendampingan terstruktur bagi founder di tahap ideasi hingga validasi, lengkap dengan modal awal dan akses jaringan.</p>
                         </div>
                     </div>
                     <div class="mt-6 pt-5 border-t border-white/[0.06]">
                         <ul class="space-y-2.5">
-                            <li class="flex items-center gap-3 text-white/55 text-sm"><i
-                                    class="fa-solid fa-check text-accent text-xs w-4"></i> Program 3–6 bulan intensif</li>
-                            <li class="flex items-center gap-3 text-white/55 text-sm"><i
-                                    class="fa-solid fa-check text-accent text-xs w-4"></i> Workshop, demo day & investor pitch
-                            </li>
-                            <li class="flex items-center gap-3 text-white/55 text-sm"><i
-                                    class="fa-solid fa-check text-accent text-xs w-4"></i> Equity-based funding pasca program
-                            </li>
+                            <li class="flex items-center gap-3 text-white/55 text-sm"><i class="fa-solid fa-check text-accent text-xs w-4"></i> Modal operasional Rp 10–50 juta</li>
+                            <li class="flex items-center gap-3 text-white/55 text-sm"><i class="fa-solid fa-check text-accent text-xs w-4"></i> Workshop & sesi mentoring rutin</li>
+                            <li class="flex items-center gap-3 text-white/55 text-sm"><i class="fa-solid fa-check text-accent text-xs w-4"></i> Demo day & pitch ke investor lokal</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Follow-On -->
+                <div class="card rounded-2xl p-8 reveal">
+                    <div class="flex items-start gap-5">
+                        <div class="flex-shrink-0 w-14 h-14 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
+                            <i class="fa-solid fa-arrows-rotate text-accent text-2xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-white/35 text-xs uppercase tracking-widest mb-1">Program 04</p>
+                            <h3 class="font-bold text-white text-lg mb-2">Follow-On</h3>
+                            <p class="text-white/50 text-sm leading-relaxed">Alokasi cadangan untuk startup portofolio yang terbukti berkembang dan membutuhkan suntikan modal tambahan di tahap berikutnya.</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-5 border-t border-white/[0.06]">
+                        <ul class="space-y-2.5">
+                            <li class="flex items-center gap-3 text-white/55 text-sm"><i class="fa-solid fa-check text-accent text-xs w-4"></i> Reserved allocation dari total fund</li>
+                            <li class="flex items-center gap-3 text-white/55 text-sm"><i class="fa-solid fa-check text-accent text-xs w-4"></i> Prioritas bagi portofolio aktif Tenin Group</li>
+                            <li class="flex items-center gap-3 text-white/55 text-sm"><i class="fa-solid fa-check text-accent text-xs w-4"></i> Bridging ke round berikutnya bersama co-investor</li>
                         </ul>
                     </div>
                 </div>
 
             </div>
+        </div>
+    </section>
+
+    <!-- ════════════ VALUE PROPOSITION ════════════ -->
+    <section class="py-24 px-5 sm:px-8 border-t border-white/[0.06] overflow-hidden">
+        <div class="max-w-6xl mx-auto">
+
+            <!-- Big statement -->
+            <div class="reveal text-center mb-20">
+                <p class="section-label mb-4">Kenapa Sekarang</p>
+                <h2 class="text-3xl sm:text-5xl font-black gradient-heading leading-tight max-w-3xl mx-auto">
+                    Ide bagus tidak butuh dana besar.<br>
+                    <span class="text-accent">Butuh orang yang percaya.</span>
+                </h2>
+                <p class="mt-6 text-white/50 max-w-xl mx-auto text-base leading-relaxed">
+                    Banyak founder berbakat gagal bukan karena idenya buruk — tapi karena tidak ada yang mau masuk di tahap paling awal. Tenin Group hadir untuk mengisi celah itu.
+                </p>
+            </div>
+
+            <!-- 3 column contrast cards -->
+            <div class="grid md:grid-cols-3 gap-5 mb-16">
+                <div class="card rounded-2xl p-7 reveal">
+                    <p class="text-accent text-3xl font-black mb-3">01</p>
+                    <h3 class="text-white font-bold text-base mb-2">Modal di Saat Paling Krusial</h3>
+                    <p class="text-white/45 text-sm leading-relaxed">Kami masuk ketika belum ada yang mau masuk. Itu yang membuat perbedaan antara startup yang hidup dan yang mati sebelum sempat dicoba.</p>
+                </div>
+                <div class="card rounded-2xl p-7 reveal" style="border-color: rgba(249,115,22,0.25); background: rgba(249,115,22,0.04);">
+                    <p class="text-accent text-3xl font-black mb-3">02</p>
+                    <h3 class="text-white font-bold text-base mb-2">Bukan Investor Pasif</h3>
+                    <p class="text-white/45 text-sm leading-relaxed">Kami terlibat aktif. Ikut problem-solving, buka pintu pertemuan, dan jadi sparring partner jujur yang berani bilang ketika ada yang perlu diperbaiki.</p>
+                </div>
+                <div class="card rounded-2xl p-7 reveal">
+                    <p class="text-accent text-3xl font-black mb-3">03</p>
+                    <h3 class="text-white font-bold text-base mb-2">Hubungan Jangka Panjang</h3>
+                    <p class="text-white/45 text-sm leading-relaxed">Investasi kami bukan transaksional. Kami ingin tumbuh bersama founder — dari validasi pertama hingga meraih pendanaan yang lebih besar.</p>
+                </div>
+            </div>
+
+            <!-- Marquee ticker -->
+            <div class="reveal overflow-hidden" style="mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);">
+                <div class="flex gap-8 animate-marquee whitespace-nowrap" style="animation: marquee 25s linear infinite;">
+                    <span class="text-white/15 text-sm font-semibold uppercase tracking-widest">Teknologi</span><span class="text-accent/40 text-sm">&#x2014;</span>
+                    <span class="text-white/15 text-sm font-semibold uppercase tracking-widest">Fintech</span><span class="text-accent/40 text-sm">&#x2014;</span>
+                    <span class="text-white/15 text-sm font-semibold uppercase tracking-widest">Healthtech</span><span class="text-accent/40 text-sm">&#x2014;</span>
+                    <span class="text-white/15 text-sm font-semibold uppercase tracking-widest">Edtech</span><span class="text-accent/40 text-sm">&#x2014;</span>
+                    <span class="text-white/15 text-sm font-semibold uppercase tracking-widest">Cleantech</span><span class="text-accent/40 text-sm">&#x2014;</span>
+                    <span class="text-white/15 text-sm font-semibold uppercase tracking-widest">SaaS</span><span class="text-accent/40 text-sm">&#x2014;</span>
+                    <span class="text-white/15 text-sm font-semibold uppercase tracking-widest">Agritech</span><span class="text-accent/40 text-sm">&#x2014;</span>
+                    <span class="text-white/15 text-sm font-semibold uppercase tracking-widest">Logistik</span><span class="text-accent/40 text-sm">&#x2014;</span>
+                    <span class="text-white/15 text-sm font-semibold uppercase tracking-widest">Teknologi</span><span class="text-accent/40 text-sm">&#x2014;</span>
+                    <span class="text-white/15 text-sm font-semibold uppercase tracking-widest">Fintech</span><span class="text-accent/40 text-sm">&#x2014;</span>
+                    <span class="text-white/15 text-sm font-semibold uppercase tracking-widest">Healthtech</span><span class="text-accent/40 text-sm">&#x2014;</span>
+                    <span class="text-white/15 text-sm font-semibold uppercase tracking-widest">Edtech</span><span class="text-accent/40 text-sm">&#x2014;</span>
+                    <span class="text-white/15 text-sm font-semibold uppercase tracking-widest">Cleantech</span><span class="text-accent/40 text-sm">&#x2014;</span>
+                    <span class="text-white/15 text-sm font-semibold uppercase tracking-widest">SaaS</span><span class="text-accent/40 text-sm">&#x2014;</span>
+                    <span class="text-white/15 text-sm font-semibold uppercase tracking-widest">Agritech</span><span class="text-accent/40 text-sm">&#x2014;</span>
+                    <span class="text-white/15 text-sm font-semibold uppercase tracking-widest">Logistik</span><span class="text-accent/40 text-sm">&#x2014;</span>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -682,65 +768,92 @@
             <div class="text-center mb-16 reveal">
                 <p class="section-label mb-3">Keunggulan</p>
                 <h2 class="text-3xl sm:text-4xl font-bold gradient-heading">Mengapa pitch ke Tenin Group?</h2>
+                <p class="mt-4 text-white/45 max-w-md mx-auto text-sm">Kami berbeda dari investor biasa — dan kami bisa buktikan itu.</p>
             </div>
 
-            <div class="grid sm:grid-cols-2 gap-4">
-                <div class="card rounded-2xl p-7 flex gap-5 reveal">
-                    <div
-                        class="flex-shrink-0 w-10 h-10 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center">
-                        <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                        </svg>
+            <div class="grid sm:grid-cols-2 gap-5">
+
+                <!-- Card 1 — full accent highlight -->
+                <div class="reveal group relative rounded-2xl p-8 overflow-hidden cursor-default"
+                    style="background: linear-gradient(135deg, rgba(249,115,22,0.10) 0%, rgba(249,115,22,0.03) 60%, transparent 100%); border: 1px solid rgba(249,115,22,0.22);">
+                    <div class="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-accent/10 blur-2xl pointer-events-none group-hover:bg-accent/20 transition duration-500"></div>
+                    <div class="relative z-10 flex gap-5 items-start">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-accent/15 border border-accent/30 flex items-center justify-center shadow-lg">
+                            <i class="fa-solid fa-hammer text-accent text-base"></i>
+                        </div>
+                        <div>
+                            <span class="inline-block text-accent/70 text-xs uppercase tracking-widest font-semibold mb-2">01 — Builders First</span>
+                            <h3 class="font-bold text-white text-base mb-2">Tim yang Pernah Membangun</h3>
+                            <p class="text-white/50 text-sm leading-relaxed">Kami bukan sekadar pemodal — kami adalah praktisi yang pernah merasakan langsung tantangan membangun bisnis dari nol.</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="font-semibold text-white text-sm mb-1">Tim Operator & Investor</h3>
-                        <p class="text-white/45 text-sm leading-relaxed">Kami bukan hanya investor — kami adalah operator berpengalaman yang pernah membangun dan menskalakan bisnis nyata.</p>
+                    <div class="mt-6 pt-5 border-t border-accent/10 flex items-center gap-2">
+                        <i class="fa-solid fa-circle-check text-accent/60 text-xs"></i>
+                        <span class="text-white/30 text-xs">Operator-led investment team</span>
                     </div>
                 </div>
 
-                <div class="card rounded-2xl p-7 flex gap-5 reveal">
-                    <div
-                        class="flex-shrink-0 w-10 h-10 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center">
-                        <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M13 10V3L4 14h7v7l9-11h-7z" />
-                        </svg>
+                <!-- Card 2 -->
+                <div class="card reveal group relative rounded-2xl p-8 overflow-hidden cursor-default">
+                    <div class="absolute -bottom-8 -right-8 w-28 h-28 rounded-full bg-accent/5 blur-2xl pointer-events-none group-hover:bg-accent/10 transition duration-500"></div>
+                    <div class="relative z-10 flex gap-5 items-start">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center">
+                            <i class="fa-solid fa-bolt text-accent text-base"></i>
+                        </div>
+                        <div>
+                            <span class="inline-block text-white/25 text-xs uppercase tracking-widest font-semibold mb-2">02 — Speed Matters</span>
+                            <h3 class="font-bold text-white text-base mb-2">Keputusan Cepat & Transparan</h3>
+                            <p class="text-white/50 text-sm leading-relaxed">Tidak ada proses berbelit. Kami memberikan jawaban jelas — ya atau tidak — dalam waktu singkat agar founder bisa fokus bergerak.</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="font-semibold text-white text-sm mb-1">Keputusan Investasi Cepat</h3>
-                        <p class="text-white/45 text-sm leading-relaxed">Proses due diligence yang efisien — keputusan term sheet dalam 2–4 minggu agar founder dapat fokus membangun produk.</p>
-                    </div>
-                </div>
-
-                <div class="card rounded-2xl p-7 flex gap-5 reveal">
-                    <div
-                        class="flex-shrink-0 w-10 h-10 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center">
-                        <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
-                    </div>
-                    <div>
-                        <h3 class="font-semibold text-white text-sm mb-1">Valuasi yang Fair</h3>
-                        <p class="text-white/45 text-sm leading-relaxed">Kami menawarkan term yang adil dan transparan, mengutamakan hubungan jangka panjang di atas kepentingan jangka pendek.</p>
+                    <div class="mt-6 pt-5 border-t border-white/[0.06] flex items-center gap-2">
+                        <i class="fa-solid fa-circle-check text-accent/60 text-xs"></i>
+                        <span class="text-white/30 text-xs">Respons dalam 5 hari kerja</span>
                     </div>
                 </div>
 
-                <div class="card rounded-2xl p-7 flex gap-5 reveal">
-                    <div
-                        class="flex-shrink-0 w-10 h-10 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center">
-                        <svg class="w-4 h-4 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                        </svg>
+                <!-- Card 3 -->
+                <div class="card reveal group relative rounded-2xl p-8 overflow-hidden cursor-default">
+                    <div class="absolute -top-8 -left-8 w-28 h-28 rounded-full bg-accent/5 blur-2xl pointer-events-none group-hover:bg-accent/10 transition duration-500"></div>
+                    <div class="relative z-10 flex gap-5 items-start">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-accent/10 border border-accent/20 flex items-center justify-center">
+                            <i class="fa-solid fa-coins text-accent text-base"></i>
+                        </div>
+                        <div>
+                            <span class="inline-block text-white/25 text-xs uppercase tracking-widest font-semibold mb-2">03 — Smart Capital</span>
+                            <h3 class="font-bold text-white text-base mb-2">Tiket Kecil, Dampak Nyata</h3>
+                            <p class="text-white/50 text-sm leading-relaxed">Modal kecil yang tepat sasaran lebih bernilai daripada dana besar yang terlambat. Kami percaya pada founder, bukan hanya angka.</p>
+                        </div>
                     </div>
-                    <div>
-                        <h3 class="font-semibold text-white text-sm mb-1">Post-Investment Support</h3>
-                        <p class="text-white/45 text-sm leading-relaxed">Kami aktif terlibat pasca-investasi: membantu rekrutmen, membuka jaringan, dan mendampingi fundraising berikutnya.</p>
+                    <div class="mt-6 pt-5 border-t border-white/[0.06] flex items-center gap-2">
+                        <i class="fa-solid fa-circle-check text-accent/60 text-xs"></i>
+                        <span class="text-white/30 text-xs">Mulai dari Rp 25 juta</span>
                     </div>
                 </div>
+
+                <!-- Card 4 — full accent highlight -->
+                <div class="reveal group relative rounded-2xl p-8 overflow-hidden cursor-default"
+                    style="background: linear-gradient(135deg, rgba(249,115,22,0.07) 0%, rgba(249,115,22,0.02) 60%, transparent 100%); border: 1px solid rgba(249,115,22,0.18);">
+                    <div class="absolute -bottom-8 -left-8 w-32 h-32 rounded-full bg-accent/10 blur-2xl pointer-events-none group-hover:bg-accent/20 transition duration-500"></div>
+                    <div class="relative z-10 flex gap-5 items-start">
+                        <div class="flex-shrink-0 w-12 h-12 rounded-2xl bg-accent/15 border border-accent/30 flex items-center justify-center shadow-lg">
+                            <i class="fa-solid fa-handshake text-accent text-base"></i>
+                        </div>
+                        <div>
+                            <span class="inline-block text-accent/70 text-xs uppercase tracking-widest font-semibold mb-2">04 — Active Partner</span>
+                            <h3 class="font-bold text-white text-base mb-2">Pendampingan Aktif</h3>
+                            <p class="text-white/50 text-sm leading-relaxed">Kami terlibat langsung pasca-investasi: membantu validasi pasar, membuka koneksi, dan mendampingi founder menghadapi tantangan awal.</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 pt-5 border-t border-accent/10 flex items-center gap-2">
+                        <i class="fa-solid fa-circle-check text-accent/60 text-xs"></i>
+                        <span class="text-white/30 text-xs">100% aktif post-deal</span>
+                    </div>
+                </div>
+
             </div>
+
+
         </div>
     </section>
 
